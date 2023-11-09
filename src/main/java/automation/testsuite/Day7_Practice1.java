@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 
 import automation.common.CommonBase;
 
-public class Login extends CommonBase{
+public class Day7_Practice1 extends CommonBase{
 
 	@BeforeTest
 	public void openChrome() {
@@ -15,5 +15,10 @@ public class Login extends CommonBase{
 	@Test
 	public void test() {
 		System.out.println("Hello my first project!");
+	}
+	
+	@AfterTest
+	public void closeChrome() {
+		driver.close();
 	}
 }
