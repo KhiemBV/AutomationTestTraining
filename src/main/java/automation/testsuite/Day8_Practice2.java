@@ -7,7 +7,7 @@ import automation.common.CommonBase;
 
 public class Day8_Practice2 extends CommonBase {
 
-	@BeforeMethod
+	@BeforeTest
 	public void openChrome() {
 		driver = initChromeDriver("https://bepantoan.vn/");
 	}
@@ -28,7 +28,7 @@ public class Day8_Practice2 extends CommonBase {
 		System.out.println("Tagname: " + driver.findElement(By.tagName("input")));
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void closeChrome() {
 		driver.close();
 	}
