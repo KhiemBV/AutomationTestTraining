@@ -20,7 +20,8 @@ public class CommonBase {
 //		return driver;
 		driver = new ChromeDriver();
 		driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-        return driver;
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+		return driver;
 	}
 }

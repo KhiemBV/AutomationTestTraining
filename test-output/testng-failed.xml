@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day8_Practice4">
+      <class name="automation.testsuite.Day9_Homework4">
         <methods>
+          <include name="closeChrome"/>
+          <include name="getLocatorByXpath"/>
           <include name="openChrome"/>
-          <include name="getLocatorOnThePage"/>
         </methods>
-      </class> <!-- automation.testsuite.Day8_Practice4 -->
+      </class> <!-- automation.testsuite.Day9_Homework4 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
