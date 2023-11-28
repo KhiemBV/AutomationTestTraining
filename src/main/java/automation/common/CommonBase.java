@@ -24,4 +24,10 @@ public class CommonBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 		return driver;
 	}
+
+	public void closeDriver() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }
