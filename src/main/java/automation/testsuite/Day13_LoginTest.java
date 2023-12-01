@@ -5,7 +5,7 @@ import static org.testng.Assert.*;
 import org.testng.annotations.*;
 import automation.common.CommonBase;
 import automation.constant.ConstantAccount;
-import automation.page.LoginPage;
+import automation.page.Day13_LoginPage;
 
 public class Day13_LoginTest extends CommonBase{
 	@BeforeMethod
@@ -15,28 +15,28 @@ public class Day13_LoginTest extends CommonBase{
 
 	@Test(priority = 1)
 	public void LoginSuccessfully() {
-		LoginPage login = new LoginPage(driver);
+		Day13_LoginPage login = new Day13_LoginPage(driver);
 		login.loginFuntion("admin@demo.com", "riseDemo");
 		assertEquals(true, driver.findElement(ConstantAccount.DASHBOARD_TEXT).isDisplayed());
 	}
 
 	@Test(priority = 2)
 	public void LoginFailIncorrertEmail() {
-		LoginPage login = new LoginPage(driver);
+		Day13_LoginPage login = new Day13_LoginPage(driver);
 		login.loginFuntion("ahihi@demo.com", "riseDemo");
 		assertEquals(true, driver.findElement(ConstantAccount.AUTHENICATION_ALERT).isDisplayed());
 	}
 	
 	@Test(priority = 3)
 	public void LoginFailIncorrertPassword() {
-		LoginPage login = new LoginPage(driver);
+		Day13_LoginPage login = new Day13_LoginPage(driver);
 		login.loginFuntion("admin@demo.com", "ahihi");
 		assertEquals(true, driver.findElement(ConstantAccount.AUTHENICATION_ALERT).isDisplayed());
 	}
 	
 	@Test(priority = 4)
 	public void LoginFailIncorrertEmail_Password() {
-		LoginPage login = new LoginPage(driver);
+		Day13_LoginPage login = new Day13_LoginPage(driver);
 		login.loginFuntion("ahihi@demo.com", "ahihi");
 		assertEquals(true, driver.findElement(ConstantAccount.AUTHENICATION_ALERT).isDisplayed());
 	}

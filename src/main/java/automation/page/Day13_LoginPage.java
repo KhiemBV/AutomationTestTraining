@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 
 import automation.constant.ConstantAccount;
 
-public class LoginPage {
+public class Day13_LoginPage {
 	private WebDriver driver;
 
-	public LoginPage(WebDriver driver) {
+	public Day13_LoginPage(WebDriver driver) {
 		super();
 		this.driver = driver;
 	}
