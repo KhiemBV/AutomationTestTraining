@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Day14_LoginPage_Factory {
+public class Day14_LoginPageFactory {
 	private WebDriver driver;
 	@FindBy (id = "email")
 	WebElement emailElement;
@@ -22,7 +22,7 @@ public class Day14_LoginPage_Factory {
 	@FindBy (xpath = "//li[normalize-space()='Sign Out']")
 	WebElement signoutBtnElement;
 	
-	public Day14_LoginPage_Factory(WebDriver driver) {
+	public Day14_LoginPageFactory(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

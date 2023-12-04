@@ -12,7 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonBase {
 	public WebDriver driver;
-	private int initWaitTime = 10;
+	private int initWaitTime =   
+			+ 10;
 
 	public WebDriver initChromeDriver(String URL) {
 //		ChromeOptions options = new ChromeOptions();
