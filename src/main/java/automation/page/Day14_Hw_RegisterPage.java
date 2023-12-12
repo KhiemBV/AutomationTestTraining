@@ -1,5 +1,6 @@
 package automation.page;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +51,9 @@ public class Day14_Hw_RegisterPage {
 	@FindBy (xpath = "//a[text()='Chỉnh sửa thông tin']")
 	WebElement editInforBtnElement;
 	
+	@FindBy (xpath = "//div[text()='Thông tin đăng nhập']")
+	WebElement inforTabElement;
+	
 	@FindBy (id = "txtnewpass")
 	WebElement newPasswordElement;
 	
@@ -89,7 +93,10 @@ public class Day14_Hw_RegisterPage {
 		LoginFuntion(email, password);
 		
 		userAvaterElement.click();
-		editInforBtnElement.click();
+		//editInforBtnElement.click();// js
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editInforBtnElement);
+		js.executeScript("arguments[0].scrollIntoView(true);", inforTabElement);
 		currentPasswordElement.sendKeys(password);
 		newPasswordElement.sendKeys(newpassword);
 		renewPasswordElement.sendKeys(newpassword);

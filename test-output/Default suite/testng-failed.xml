@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day15_ClientTest">
+      <class name="automation.testsuite.Day16_Homework">
         <methods>
-          <include name="AddClientSuccessfully"/>
+          <include name="Alada_ChangePasswordSuccessfully"/>
           <include name="openChrome"/>
         </methods>
-      </class> <!-- automation.testsuite.Day15_ClientTest -->
+      </class> <!-- automation.testsuite.Day16_Homework -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
