@@ -30,8 +30,7 @@ public class Day16_Homework extends CommonBase {
 		Day14_Hw_RegisterPage register = new Day14_Hw_RegisterPage(driver);
 		register.ChangePasswordFuntion(email, password, newPassword);
 		// verify alert
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
+		waitAlertPresent();
 		String alertTextString = driver.switchTo().alert().getText();
 		assertEquals(alertTextString, "Cập nhật mật khẩu mới thành công!");
 		driver.switchTo().alert().accept();
@@ -45,8 +44,7 @@ public class Day16_Homework extends CommonBase {
 		driver = initChromeDriver("http://seleniumpractise.blogspot.com/2019/01/alert-demo.html");
 		
 		click(By.xpath("//button[text()='Try it']"));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
+		waitAlertPresent();
 		String alertMsg = driver.switchTo().alert().getText();
 		assertEquals(alertMsg, "Welcome to Selenium WebDriver Tutorials");
 		driver.switchTo().alert().accept();

@@ -82,7 +82,17 @@ public class CommonBase {
 			e.printStackTrace();
 		}
 	}
+	
+	public void waitAlertPresent() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(initWaitTime));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
 
+	public void waitIFramePresent(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(initWaitTime));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
+	}
+	
 	public void closeDriver() {
 		if (driver != null) {
 			driver.quit();
