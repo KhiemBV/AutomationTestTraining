@@ -6,7 +6,8 @@
       <class name="automation.testsuite.Day17_Homework">
         <methods>
           <include name="handleIFrame_MediaMart"/>
-          <include name="openChrome"/>
+          <include name="closeChrome"/>
+          <include name="openDriver"/>
         </methods>
       </class> <!-- automation.testsuite.Day17_Homework -->
     </classes>

@@ -1,29 +1,27 @@
 package automation.testsuite;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-import java.time.Duration;
+import static org.testng.Assert.*;
 import java.util.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 
 import automation.common.CommonBase;
 
 public class Day17_Homework extends CommonBase {
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver("https://mediamart.vn/");
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("https://mediamart.vn/");
 	}
 
 	@Test
 	public void handleIFrame_MediaMart() {
 		// wait
-		//waitIFramePresent(By.xpath("//div[@id='chat-plugins']//iframe")); --> ko hoat dong??
+		//waitIFramePresent(By.xpath("//div[@id='chat-plugins']//iframe"));  --> ko hoat dong??
 		isElementPresent(By.xpath("//div[@class='chat-plugins']//iframe"));
 		
 		// switch to frame

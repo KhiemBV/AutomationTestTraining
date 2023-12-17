@@ -9,13 +9,15 @@ import automation.common.CommonBase;
 
 public class Day16_Practice extends CommonBase {
 
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
 	}
 
 	@Test(priority = 1)
 	public void deleteCustomerSuccessfully() {
-		driver = initChromeDriver("https://demo.guru99.com/test/delete_customer.php");
+		driver.get("https://demo.guru99.com/test/delete_customer.php");
 		
 		type(By.xpath("//input[@name='cusid']"), "1234");
 		click(By.xpath("//input[@name='submit']"));
@@ -28,7 +30,7 @@ public class Day16_Practice extends CommonBase {
 	
 	@Test(priority = 2)
 	public void handleTextboxAlert() {
-		driver = initChromeDriver("https://demo.automationtesting.in/Alerts.html");
+		driver.get("https://demo.automationtesting.in/Alerts.html");
 		
 		click(By.xpath("//a[normalize-space()='Alert with OK']"));
 		click(By.xpath("//div[@id='OKTab']//button"));

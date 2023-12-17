@@ -7,18 +7,20 @@ import java.util.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 
 import automation.common.CommonBase;
 
 public class Day17_Practice extends CommonBase {
-	@BeforeMethod
-	public void openChrome() {
-		//
-	}
 
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+	}
 	@Test
 	public void handlePopupWindow() {
-		driver = initChromeDriver("https://demo.guru99.com/popup.php");
+		driver.get("https://demo.guru99.com/popup.php");
 		
 		click(By.xpath("//a[text()='Click Here']"));
 		String mainWindow = driver.getWindowHandle();
@@ -40,7 +42,7 @@ public class Day17_Practice extends CommonBase {
 	
 	@Test
 	public void handleIFrame_GuiNgay() {
-		driver = initChromeDriver("https://codestar.vn/");
+		driver.get("https://codestar.vn/");
 		
 		pause(5000);
 		int size = driver.findElements(By.tagName("iframe")).size();
@@ -60,7 +62,7 @@ public class Day17_Practice extends CommonBase {
 	
 	@Test
 	public void handleIFrame_DangKyNgay() {
-		driver = initChromeDriver("https://codestar.vn/");
+		driver.get("https://codestar.vn/");
 		
 		waitIFramePresent(By.tagName("iframe"));
 		int size = driver.findElements(By.tagName("iframe")).size();

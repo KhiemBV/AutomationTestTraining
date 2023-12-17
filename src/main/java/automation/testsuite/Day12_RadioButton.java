@@ -5,15 +5,21 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import automation.common.CommonBase;
 
 public class Day12_RadioButton extends CommonBase{
-	@BeforeTest
-	public void openChrome() {
-		driver = initChromeDriver("http://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+	
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("http://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 	}
 
 	@Test(priority = 1)

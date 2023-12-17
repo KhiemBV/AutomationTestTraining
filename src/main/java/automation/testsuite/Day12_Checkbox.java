@@ -5,16 +5,18 @@ import java.util.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 
 import automation.common.CommonBase;
 
 public class Day12_Checkbox extends CommonBase {
 
-	@BeforeTest
-	public void openChrome() {
-		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 	}
-
 	@Test(priority = 1)
 	public void clickOnSingleCheckbox() {
 		// kiem tra Default check box da dc check

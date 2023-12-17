@@ -6,9 +6,11 @@ import org.testng.annotations.*;
 import automation.common.CommonBase;
 
 public class Day8_Practice4 extends CommonBase {
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver("https://automationfc.github.io/basic-form/index.html");
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("https://automationfc.github.io/basic-form/index.html");
 	}
 	
 	@Test

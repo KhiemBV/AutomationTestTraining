@@ -8,12 +8,14 @@ import automation.constant.ConstantAccount;
 import automation.page.Day15_TrizenPage;
 
 public class Day15_TrizenTest extends CommonBase{
-	
-	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver(ConstantAccount.TRIZEN_URL);
-	}
 
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get(ConstantAccount.TRIZEN_URL);
+	}
+	
 	@Test(priority = 1)
 	public void searchFlySuccessfully() throws InterruptedException {
 		Day15_TrizenPage trizen = new Day15_TrizenPage(driver);

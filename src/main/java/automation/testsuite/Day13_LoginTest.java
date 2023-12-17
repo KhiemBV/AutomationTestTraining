@@ -8,9 +8,12 @@ import automation.constant.ConstantAccount;
 import automation.page.Day13_LoginPage;
 
 public class Day13_LoginTest extends CommonBase{
+	
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver(ConstantAccount.RISE_URL);
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get(ConstantAccount.RISE_URL);
 	}
 
 	@Test(priority = 1)

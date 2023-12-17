@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,15 +18,15 @@ public class CommonBase {
 	public WebDriver driver;
 	private int initWaitTime = 5;
 
-	public WebDriver initChromeDriver(String URL) {
-		ChromeOptions options = new ChromeOptions();
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.get(URL);
-		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-		return driver;
-	}
+//	public WebDriver initChromeDriver(String URL) {
+//		ChromeOptions options = new ChromeOptions();
+//		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+//		driver = new ChromeDriver(options);
+//		driver.manage().window().maximize();
+//		driver.get(URL);
+//		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+//		return driver;
+//	}
 
 	public boolean isElementPresent(By locator) {
 		try {
@@ -97,5 +99,49 @@ public class CommonBase {
 		if (driver != null) {
 			driver.quit();
 		}
+	}
+	
+	private WebDriver initChromeDriver() {
+		System.out.println("Chrome driver runing ...");
+		ChromeOptions options = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+		driver = new ChromeDriver(options);
+		return driver;
+	}
+	
+	private WebDriver initFirefoxDriver() {
+		System.out.println("Firefox driver runing ...");
+		System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir") + "\\driver\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		return driver;
+	}
+	
+	private WebDriver initMSEdgeDriver() {
+		System.out.println("MSEdge driver runing ...");
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\driver\\msedgedriver.exe");
+		driver = new EdgeDriver();
+		return driver;
+	}
+	
+	public WebDriver setupDriver(String browser) {
+		switch (browser.trim().toLowerCase()) {
+		case "chrome":
+			driver = initChromeDriver();
+			break;
+		case "firefox":
+			driver = initFirefoxDriver();
+			break;
+		case "edge":
+			driver = initMSEdgeDriver();
+			break;
+		default:
+			System.out.println("No browser name was passed");
+			driver = initChromeDriver();
+			break;
+		}
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+		return driver;
 	}
 }

@@ -6,15 +6,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 
 import automation.common.CommonBase;
 
 public class Day12_Dropdown extends CommonBase {
-	@BeforeTest
-	public void openChrome() {
-		driver = initChromeDriver("http://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
-	}
 
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("http://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+	}
+	
 	@Test(priority = 1)
 	public void checkOnDropdown() throws InterruptedException {
 		WebElement selecttag = driver.findElement(By.id("select-demo"));

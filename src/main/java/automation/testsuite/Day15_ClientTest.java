@@ -13,9 +13,11 @@ import automation.page.Day15_ClientPage;
 
 public class Day15_ClientTest extends CommonBase{
 	
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver(ConstantAccount.RISE_URL);
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get(ConstantAccount.RISE_URL);
 	}
 
 	@Test(priority = 1)

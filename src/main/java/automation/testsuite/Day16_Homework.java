@@ -18,14 +18,15 @@ public class Day16_Homework extends CommonBase {
 	private String password = "demo13579";
 	private String newPassword = "demo13579";
 
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
 	}
 
 	@Test(priority = 1)
 	public void Alada_ChangePasswordSuccessfully() {
-		driver = initChromeDriver(ConstantAccount.ALADA_URL);
+		driver.get(ConstantAccount.ALADA_URL);
 		// change password
 		Day14_Hw_RegisterPage register = new Day14_Hw_RegisterPage(driver);
 		register.ChangePasswordFuntion(email, password, newPassword);
@@ -41,7 +42,7 @@ public class Day16_Homework extends CommonBase {
 	
 	@Test (priority = 2)
 	public void SeleniumPractice_AlertDemo() {
-		driver = initChromeDriver("http://seleniumpractise.blogspot.com/2019/01/alert-demo.html");
+		driver.get("http://seleniumpractise.blogspot.com/2019/01/alert-demo.html");
 		
 		click(By.xpath("//button[text()='Try it']"));
 		waitAlertPresent();

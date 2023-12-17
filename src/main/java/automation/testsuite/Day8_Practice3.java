@@ -6,9 +6,11 @@ import org.testng.annotations.*;
 import automation.common.CommonBase;
 
 public class Day8_Practice3 extends CommonBase {
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver("https://selectorshub.com/xpath-practice-page/");
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("https://selectorshub.com/xpath-practice-page/");
 	}
 	
 	@Test

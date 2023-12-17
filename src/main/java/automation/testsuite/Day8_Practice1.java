@@ -7,9 +7,11 @@ import org.testng.annotations.*;
 import automation.common.CommonBase;
 
 public class Day8_Practice1 extends CommonBase {
-	@BeforeTest
-	public void openChrome() {
-		driver = initChromeDriver("https://rise.fairsketch.com/signin");
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get("https://rise.fairsketch.com/signin");
 	}
 	
 	@Test

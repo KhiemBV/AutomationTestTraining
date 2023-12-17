@@ -5,6 +5,8 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import automation.common.CommonBase;
@@ -12,11 +14,13 @@ import automation.constant.ConstantAccount;
 import automation.page.Day14_LoginPageFactory;
 
 public class Day14_LoginTestFactory extends CommonBase{
-	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver(ConstantAccount.RISE_URL);
-	}
 
+	@Parameters("browser")
+	@BeforeMethod
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get(ConstantAccount.RISE_URL);
+	}
 	@Test(priority = 1)
 	public void LoginSuccessfully() {
 		Day14_LoginPageFactory login = new Day14_LoginPageFactory(driver);

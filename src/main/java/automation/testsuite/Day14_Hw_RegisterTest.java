@@ -16,9 +16,11 @@ public class Day14_Hw_RegisterTest extends CommonBase {
 	private String phonenumber = "0987123654";
 	private String newPassword = "demo13579";
 
+	@Parameters("browser")
 	@BeforeMethod
-	public void openChrome() {
-		driver = initChromeDriver(ConstantAccount.ALADA_URL);
+	public void openDriver(@Optional("chrome") String browser) {
+		driver = setupDriver(browser);
+		driver.get(ConstantAccount.ALADA_URL);
 	}
 
 	@Test(priority = 1)
