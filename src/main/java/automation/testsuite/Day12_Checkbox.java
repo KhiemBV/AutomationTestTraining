@@ -10,7 +10,6 @@ import org.testng.annotations.Optional;
 import automation.common.CommonBase;
 
 public class Day12_Checkbox extends CommonBase {
-
 	@Parameters("browser")
 	@BeforeMethod
 	public void openDriver(@Optional("chrome") String browser) {

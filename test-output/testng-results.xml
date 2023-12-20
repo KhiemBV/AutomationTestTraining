@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-17T16:41:05 ICT" name="Default suite" finished-at="2023-12-17T16:41:27 ICT" duration-ms="22050">
+  <suite started-at="2023-12-20T16:14:10 ICT" name="Suite" finished-at="2023-12-20T16:16:00 ICT" duration-ms="109100">
     <groups>
     </groups>
-    <test started-at="2023-12-17T16:41:05 ICT" name="Default test" finished-at="2023-12-17T16:41:27 ICT" duration-ms="22050">
-      <class name="automation.testsuite.Day17_Homework">
-        <test-method is-config="true" signature="openDriver(java.lang.String)[pri:0, instance:automation.testsuite.Day17_Homework@f0da945]" started-at="2023-12-17T16:41:05 ICT" name="openDriver" finished-at="2023-12-17T16:41:09 ICT" duration-ms="4523" status="PASS">
+    <test started-at="2023-12-20T16:14:10 ICT" name="Test with chrome driver" finished-at="2023-12-20T16:14:46 ICT" duration-ms="35968">
+      <class name="automation.testsuite.Day18_Homework_Ex2">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@4f80542f]" started-at="2023-12-20T16:14:18 ICT" name="openBrowser" finished-at="2023-12-20T16:14:23 ICT" duration-ms="4685" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="testFuntion_ChatNgayVoiChungToi()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@4f80542f]" started-at="2023-12-20T16:14:23 ICT" name="testFuntion_ChatNgayVoiChungToi" finished-at="2023-12-20T16:14:46 ICT" duration-ms="23211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFuntion_ChatNgayVoiChungToi -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@4f80542f]" started-at="2023-12-20T16:14:46 ICT" name="closeBrowser" finished-at="2023-12-20T16:14:46 ICT" duration-ms="501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex2 -->
+      <class name="automation.testsuite.Day18_Homework_Ex1">
+        <test-method is-config="true" signature="openDriver(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@194bcebf]" started-at="2023-12-20T16:14:11 ICT" name="openDriver" finished-at="2023-12-20T16:14:15 ICT" duration-ms="4673" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +39,103 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openDriver -->
-        <test-method signature="handleIFrame_MediaMart()[pri:0, instance:automation.testsuite.Day17_Homework@f0da945]" started-at="2023-12-17T16:41:09 ICT" name="handleIFrame_MediaMart" finished-at="2023-12-17T16:41:26 ICT" duration-ms="17248" status="PASS">
+        <test-method signature="testZaloConnectFuntion()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@194bcebf]" started-at="2023-12-20T16:14:15 ICT" name="testZaloConnectFuntion" finished-at="2023-12-20T16:14:18 ICT" duration-ms="2634" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- handleIFrame_MediaMart -->
-        <test-method is-config="true" signature="closeChrome()[pri:0, instance:automation.testsuite.Day17_Homework@f0da945]" started-at="2023-12-17T16:41:26 ICT" name="closeChrome" finished-at="2023-12-17T16:41:27 ICT" duration-ms="241" status="PASS">
+        </test-method> <!-- testZaloConnectFuntion -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@194bcebf]" started-at="2023-12-20T16:14:18 ICT" name="closeBrowser" finished-at="2023-12-20T16:14:18 ICT" duration-ms="218" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeChrome -->
-      </class> <!-- automation.testsuite.Day17_Homework -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex1 -->
+    </test> <!-- Test with chrome driver -->
+    <test started-at="2023-12-20T16:14:46 ICT" name="Test with firefox driver" finished-at="2023-12-20T16:15:24 ICT" duration-ms="37624">
+      <class name="automation.testsuite.Day18_Homework_Ex2">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@644baf4a]" started-at="2023-12-20T16:14:55 ICT" name="openBrowser" finished-at="2023-12-20T16:15:02 ICT" duration-ms="6955" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="testFuntion_ChatNgayVoiChungToi()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@644baf4a]" started-at="2023-12-20T16:15:02 ICT" name="testFuntion_ChatNgayVoiChungToi" finished-at="2023-12-20T16:15:23 ICT" duration-ms="20508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFuntion_ChatNgayVoiChungToi -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@644baf4a]" started-at="2023-12-20T16:15:23 ICT" name="closeBrowser" finished-at="2023-12-20T16:15:24 ICT" duration-ms="1195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex2 -->
+      <class name="automation.testsuite.Day18_Homework_Ex1">
+        <test-method is-config="true" signature="openDriver(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@f78a47e]" started-at="2023-12-20T16:14:46 ICT" name="openDriver" finished-at="2023-12-20T16:14:51 ICT" duration-ms="4915" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openDriver -->
+        <test-method signature="testZaloConnectFuntion()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@f78a47e]" started-at="2023-12-20T16:14:51 ICT" name="testZaloConnectFuntion" finished-at="2023-12-20T16:14:54 ICT" duration-ms="2806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testZaloConnectFuntion -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@f78a47e]" started-at="2023-12-20T16:14:54 ICT" name="closeBrowser" finished-at="2023-12-20T16:14:55 ICT" duration-ms="1241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex1 -->
+    </test> <!-- Test with firefox driver -->
+    <test started-at="2023-12-20T16:15:24 ICT" name="Test with edge driver" finished-at="2023-12-20T16:16:00 ICT" duration-ms="35464">
+      <class name="automation.testsuite.Day18_Homework_Ex2">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@11392934]" started-at="2023-12-20T16:15:33 ICT" name="openBrowser" finished-at="2023-12-20T16:15:39 ICT" duration-ms="6244" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="testFuntion_ChatNgayVoiChungToi()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@11392934]" started-at="2023-12-20T16:15:39 ICT" name="testFuntion_ChatNgayVoiChungToi" finished-at="2023-12-20T16:15:59 ICT" duration-ms="20444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFuntion_ChatNgayVoiChungToi -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex2@11392934]" started-at="2023-12-20T16:15:59 ICT" name="closeBrowser" finished-at="2023-12-20T16:16:00 ICT" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex2 -->
+      <class name="automation.testsuite.Day18_Homework_Ex1">
+        <test-method is-config="true" signature="openDriver(java.lang.String)[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@2a265ea9]" started-at="2023-12-20T16:15:24 ICT" name="openDriver" finished-at="2023-12-20T16:15:30 ICT" duration-ms="6032" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openDriver -->
+        <test-method signature="testZaloConnectFuntion()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@2a265ea9]" started-at="2023-12-20T16:15:30 ICT" name="testZaloConnectFuntion" finished-at="2023-12-20T16:15:32 ICT" duration-ms="2276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testZaloConnectFuntion -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.testsuite.Day18_Homework_Ex1@2a265ea9]" started-at="2023-12-20T16:15:32 ICT" name="closeBrowser" finished-at="2023-12-20T16:15:33 ICT" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- automation.testsuite.Day18_Homework_Ex1 -->
+    </test> <!-- Test with edge driver -->
+  </suite> <!-- Suite -->
 </testng-results>

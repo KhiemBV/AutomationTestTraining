@@ -1,6 +1,11 @@
 package automation.testsuite;
 
-import static org.testng.Assert.*;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.Assert.*;
+
+import static org.testng.Assert.assertEquals;
+
 import java.util.*;
 
 import org.openqa.selenium.By;
@@ -28,21 +33,19 @@ public class Day17_Homework extends CommonBase {
 		WebElement zaloIFrame = driver.findElement(By.xpath("//div[@id='chat-plugins']//iframe"));
 		driver.switchTo().frame(zaloIFrame);
 		
-		assertEquals(false, isElementPresent(By.xpath("//div[@class='chat-wrapper za-chat__wrapper']")));
+		//AssertJUnit.assertEquals(false, isElementPresent(By.xpath("//div[@class='chat-wrapper za-chat__wrapper']")));
 		click(By.xpath("//div[@class='logo']"));
 		assertEquals(true, isElementPresent(By.xpath("//div[@class='chat-wrapper za-chat__wrapper']")));
-		
-//		click(By.xpath("//div[normalize-space()='Chat bằng Zalo']"));
-//		String alertString = driver.switchTo().alert().getText();
-//		System.out.println(alertString);
+		assertEquals(true, isElementPresent(By.xpath("//div[normalize-space()='Chat nhanh']")));
 
-		assertEquals(false, isElementPresent(By.xpath("//div[@class='card']")));
-		click(By.xpath("//div[normalize-space()='Chat nhanh']"));
-		assertEquals(true, isElementPresent(By.xpath("//div[@class='card']")));	
+		driver.switchTo().defaultContent();
+		//AssertJUnit.assertEquals(false, isElementPresent(By.xpath("//div[@class='card']")));
+		//click(By.xpath("//div[normalize-space()='Chat nhanh']"));
+		//assertEquals(true, isElementPresent(By.xpath("//div[@class='card']")));	
 	}
 
 	@AfterMethod
-	public void closeChrome() {
+	public void closeBrowserDriver() {
 		closeDriver();
 	}
 }

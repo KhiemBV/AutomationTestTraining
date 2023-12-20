@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -67,7 +69,7 @@ public class CommonBase {
 
 	public void clickByJS(By locator) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", locator);
+		js.executeScript("arguments[0].click();", getElementPresentDOM(locator));
 	}
 	
 	public void scroll(By locator) {
@@ -111,15 +113,17 @@ public class CommonBase {
 	
 	private WebDriver initFirefoxDriver() {
 		System.out.println("Firefox driver runing ...");
+		FirefoxOptions options = new FirefoxOptions();
 		System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir") + "\\driver\\geckodriver.exe");
-		driver = new FirefoxDriver();
+		driver = new FirefoxDriver(options);
 		return driver;
 	}
 	
 	private WebDriver initMSEdgeDriver() {
 		System.out.println("MSEdge driver runing ...");
+		EdgeOptions options = new EdgeOptions();
 		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\driver\\msedgedriver.exe");
-		driver = new EdgeDriver();
+		driver = new EdgeDriver(options);
 		return driver;
 	}
 	
